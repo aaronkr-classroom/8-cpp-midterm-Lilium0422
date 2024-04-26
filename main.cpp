@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <numeric>
 
 #include "analysis.h"
 #include "grade.h"
@@ -19,7 +20,6 @@
 using namespace std;
 
 int main() {
-    /*
     // 파일스트림 만들고 "txt" 파일을 읽기
     ifstream student_file("grades.txt"); // 에런
     ifstream student_file_did("grades_did.txt"); // 에런
@@ -47,20 +47,20 @@ int main() {
             didnt.push_back(record);
         }
     }
-    */
+
 
     int fileChoice = printGreeting();
-    // cout << fileChoice << typeid(fileChoice).name();
+    cout << fileChoice << typeid(fileChoice).name();
 
-    vector<Student_info> students, did, didnt;
-    string::size_type maxlen = 0;
+    //vector<Student_info> students, did, didnt;
+    //string::size_type maxlen = 0;
 
     fileSelect(fileChoice, students, did, didnt, maxlen);
 
-    // loadGrades(student_file, students, did, didnt, maxlen);
+    loadGrades(student_file, students, did, didnt, maxlen);
 
-    // cout << "Welcome to Student Gradebook!" << endl;
-    // cout << "Read " << students.size() << " records." << endl << endl;
+    cout << "Welcome to Student Gradebook!" << endl;
+    cout << "Read " << students.size() << " records." << endl << endl;
 
     bool quit = false;
     int choice;
